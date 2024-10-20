@@ -1,0 +1,43 @@
+// hesap makinesi
+// değişkenler (let -> immutable, var -> mutable)
+// operatörler
+// async metodu
+// if condition
+
+// canister => akıllı sözleşme
+actor calculator {
+  var cell: Int = 0;
+
+//toplama
+public func addition(n: Int) : async Int {
+  cell += n;
+  return cell
+};
+
+//çıkarma
+public func subtraction(n: Int) : async Int {
+  cell -= n;
+  return cell
+};
+
+//çarpma
+public func multiplication(n : Int) : async Int {
+  cell *= n;
+  return cell
+};
+
+//bölme
+public func divide(n: Int) : async ?Int  {
+  if (n == 0) {
+    return null
+  }else {
+    cell/= n;
+    return ?cell
+};
+};
+
+//temizle
+public func cleansing() : async () {
+  cell := 0;
+};
+};
